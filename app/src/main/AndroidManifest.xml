@@ -15,6 +15,24 @@
         android:name="android.hardware.camera2"
         android:required="true" />
 
+    <queries>
+
+        <!-- Browser -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <data android:scheme="http" />
+        </intent>
+        <!-- Camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <!-- Gallery -->
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +40,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Laboratorio1P2">
-        <activity android:name=".ActivityPhoto"></activity>
+        <activity android:name=".ActivityVideo"></activity>
+        <activity android:name=".ActivityPhoto" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,23 +60,5 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
-
-    <queries>
-
-        <!-- Browser -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <data android:scheme="http" />
-        </intent>
-        <!-- Camera -->
-        <intent>
-            <action android:name="android.media.action.IMAGE_CAPTURE" />
-        </intent>
-        <!-- Gallery -->
-        <intent>
-            <action android:name="android.intent.action.GET_CONTENT" />
-        </intent>
-    </queries>
 
 </manifest>
